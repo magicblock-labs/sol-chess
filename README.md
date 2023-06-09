@@ -35,6 +35,15 @@ This fork uses the commit [68d5034abf0e0365f98726a63bf0bcace454b403](https://git
 - You can find the sol-chess program and the IDL deployed in Devnet at [ChessfTT9XpWA9WxrSSLMnCseRqykb9LaMXKMhyWEiR4](https://explorer.solana.com/address/ChessfTT9XpWA9WxrSSLMnCseRqykb9LaMXKMhyWEiR4?cluster=devnet). 
 - If you want to intereact with the [React UI](https://chess.vicyyn.com/) by vicyyn use instead [CCdU3zmYqPZaR2twy5hqcJmFV36tRpFC81seKUE8HVwX](https://explorer.solana.com/address/CCdU3zmYqPZaR2twy5hqcJmFV36tRpFC81seKUE8HVwX?cluster=devnet) as program ID.
 
+## Autogenerating the Unity Client
+
+- You can autogenerate the Unity client from the [IDL](https://solscan.io/account/ChessfTT9XpWA9WxrSSLMnCseRqykb9LaMXKMhyWEiR4?cluster=devnet#anchorProgramIDL) with:
+
+```csharp
+dotnet tool install -g Solana.Unity.Anchor.Tool
+dotnet anchorgen -i idl.json -o src/SolChessProgram.cs
+```
+
 ## Features
 |         Feature         | Implemented |
 |-------------------------|:-----------:|
