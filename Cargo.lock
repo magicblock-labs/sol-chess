@@ -1410,6 +1410,37 @@ dependencies = [
 ]
 
 [[package]]
+name = "gpl-session"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a6c883a012df5486284d153cbe92415bcff2a04e9db9d912d998d52c0ffc5c3e"
+dependencies = [
+ "anchor-lang",
+ "gpl-session-macros",
+ "solana-security-txt",
+]
+
+[[package]]
+name = "gpl-session-macros"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0b14a3d5a74e8de1a50d5f2041332751a5b2e130dbf454006362359490b912c2"
+dependencies = [
+ "gpl-session-macros-attribute",
+]
+
+[[package]]
+name = "gpl-session-macros-attribute"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d61965e71091dee21d212aa39a04e6de3a25062a2c67e9a4f7f2b33dfb9975f2"
+dependencies = [
+ "proc-macro2 1.0.49",
+ "quote 1.0.23",
+ "syn 1.0.107",
+]
+
+[[package]]
 name = "h2"
 version = "0.3.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2915,6 +2946,7 @@ name = "sol-chess"
 version = "0.1.0"
 dependencies = [
  "anchor-lang",
+ "gpl-session",
 ]
 
 [[package]]
@@ -3344,6 +3376,12 @@ dependencies = [
  "rustversion",
  "syn 1.0.107",
 ]
+
+[[package]]
+name = "solana-security-txt"
+version = "1.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "468aa43b7edb1f9b7b7b686d5c3aeb6630dc1708e86e31343499dd5c4d775183"
 
 [[package]]
 name = "solana-streamer"
