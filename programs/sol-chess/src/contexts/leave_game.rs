@@ -10,6 +10,7 @@ pub struct LeaveGame<'info> {
     #[account(mut)]
     pub game: Account<'info, Game>,
 }
+
 impl<'info> LeaveGame<'info> {
     pub fn process(&mut self) -> Result<()> {
         let Self { user, game, .. } = self;

@@ -20,9 +20,10 @@ fn main() -> ClientResult<()> {
 
     let user = sol_chess::User::pda(client.payer_pubkey()).0;
     let game = sol_chess::Game::pda(user.key(), 0).0;
+    let is_rated = false;
 
     initialize_user(&client, user)?;
-    initialize_game(&client, user, game, Some(1000))?;
+    initialize_game(&client, user, game, is_rated, Some(1000))?;
 
     deposit(&client, user, 100000)?;
 

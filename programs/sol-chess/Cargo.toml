@@ -17,3 +17,4 @@ default = []
 
 [dependencies]
 anchor-lang = "0.26.0"
+gpl-session = { version = "0.2.0", features = ["no-entrypoint"] }
