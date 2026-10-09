@@ -77,6 +77,11 @@ impl<'info> MovePiece<'info> {
         );
 
         require!(
+            game.get_adversary_player(color).eq(&adversary_user.key()),
+            CustomError::InvalidAdversaryUserAccount
+        );
+
+        require!(
             game.is_valid_move(color, from, to),
             CustomError::InvalidMove
         );
@@ -93,8 +98,10 @@ impl<'info> MovePiece<'info> {
                 user.increase_balance(game.get_wager() * 2)
             }
 
-            user.won_against(adversary_user.get_elo());
-            adversary_user.lost_against(user.get_elo());
+            if game.is_rated() {
+                user.won_against(adversary_user.get_elo());
+                adversary_user.lost_against(user.get_elo());
+            }
         }
 
         game.reset_draw_state();

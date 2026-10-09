@@ -56,7 +56,8 @@ impl User {
     }
 
     pub fn get_new_elo(&self, adversary_elo: u32, score: f64) -> u32 {
-        self.elo + (40.0 * (score - self.get_expected_score(adversary_elo))) as u32
+        let change = (40.0 * (score - self.get_expected_score(adversary_elo))) as i64;
+        (self.elo as i64 + change).max(0) as u32
     }
 
     pub fn won_against(&mut self, adversary_elo: u32) {
